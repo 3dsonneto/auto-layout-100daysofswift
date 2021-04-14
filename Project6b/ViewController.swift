@@ -48,7 +48,7 @@ class ViewController: UIViewController {
         view.addSubview(label4)
         view.addSubview(label5)
         
-        //sem constraints os labels ficam no canto esquerdo superior, um em cima do outro
+        //sem constraints os labels ficam no canto esquerdo superior, um em cima do outro.
     }
 
     
