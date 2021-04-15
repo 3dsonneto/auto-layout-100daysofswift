@@ -49,6 +49,25 @@ class ViewController: UIViewController {
         view.addSubview(label5)
         
         //sem constraints os labels ficam no canto esquerdo superior, um em cima do outro.
+        
+        let viewsDictionary = [
+            "label1": label1,
+            "label2": label2,
+            "label3": label3,
+            "label4": label4,
+            "label5": label5
+        ]
+        
+        for label in viewsDictionary.keys{
+            view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[\(label)]|", options: [], metrics: nil, views: viewsDictionary))
+            //view = main view
+            //addConstraints: adiciona um array de constraints ao nosso view
+            //NSLayoutConstraint.constraints: converte vfls para um array de constraints
+            //o vfl descreve como queremos nosso layout, H(Horizontal Layout), | = borda da view, [label] = coloque o labelx aqui
+            //usamos o dicionario para poder usar o string e em views diz de onde está vindo
+        }
+
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[label1]-[label2]-[label3]-[label4]-[label5]", options: [], metrics: nil, views: viewsDictionary))
     }
 
     
